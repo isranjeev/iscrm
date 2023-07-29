@@ -38,7 +38,7 @@ while($drow = mysqli_fetch_array($data)) {
       $uid = $drow['id'];
       $phone_mobile = $drow['phone_mobile'];
       $phone_work = $drow['phone_work'];
-      // echo $uid;
+     
      // finding the email connection by using the primary id of a user
       $sqlt = "SELECT * FROM `email_addr_bean_rel` where bean_id='$uid'";
       $eabr = mysqli_query($conn, $sqlt) or die( mysqli_error($conn));
@@ -56,10 +56,10 @@ while($drow = mysqli_fetch_array($data)) {
 
     // create a random code and send it to next page to store in the database as well as send in email or by sms
     $pass= rand(100000, 999999); 
-    //echo $pass;
+    
     
 
-    // echo "INSERT INTO `otp_verification`(`otp_method`, `otp_code`, `user_id`, `status`, `created`) VALUES ('$method','$otpcode','$ifidi','Active', now())";
+    // Insert otp record in database
     $ins = "INSERT INTO `otp_verification`(`otp_method`, `otp_code`, `user_id`, `status`, `created`) VALUES ('$method','$pass','$ifid','Active', now())";
     $insd = mysqli_query($conn, $ins);
     $last_id = $conn->insert_id;

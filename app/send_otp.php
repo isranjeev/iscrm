@@ -77,7 +77,7 @@ while($drow = mysqli_fetch_array($data)) {
       $sesql = "SELECT * FROM `email_addresses` WHERE id='$umailid'";
       $edata = mysqli_query($conn, $sesql) or die(mysqli_error($conn));
       while($eedata = mysqli_fetch_array($edata)){
-                    $myemail = $eedata['email_address'];
+        $myemail = $eedata['email_address'];
       }
      
     }

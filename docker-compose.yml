@@ -1,0 +1,35 @@
+version: '3.3'
+services:
+    php-apache-dev:
+        container_name: php-dev
+        build:
+            context: ./
+            dockerfile: Dockerfile
+        depends_on:
+            - db
+        volumes:
+            - ./app:/var/www/html/
+        ports:
+            - 80:80
+    db:
+        container_name: db
+        image: mariadb:10.5.10
+        restart: always
+        environment:
+            MARIADB_ROOT_PASSWORD: MARIADB_ROOT_PASSWORD
+            MARIADB_DATABASE: MARIADB_DATABASE
+            MARIADB_USER: MARIADB_USER
+            MARIADB_PASSWORD: MARIADB_PASSWORD
+        volumes:
+            - ./dbdata:/var/lib/mysql
+        ports:
+            - 3306:3306
+    phpmyadmin:
+        image: phpmyadmin/phpmyadmin
+        ports:
+            - 8080:80
+        restart: always
+        environment:
+            PMA_HOST: db
+        depends_on:
+            - db

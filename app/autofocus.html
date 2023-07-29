@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jquery Auto Focus On Next Input Field!</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!-- Script to move control on next input field -->
+    <script>
+    $(document).ready(function() {
+        $(".input-key").keyup(function() {
+            if ($(this).val().length == $(this).attr("maxlength")) {
+                $(this).next('.input-key').focus();
+            }
+        });
+    });
+    </script>
+</head>
+
+<body>
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <div class="jumbotron mt-5">
+                <h2 class="display-6">Jquery Auto Focus On Next Input Field!</h2>
+                <hr>
+                <div class="input-group mt-5">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="">Key</span>
+                    </div>
+                    <input type="text" class="form-control input-key text-center" maxlength="4">
+                    <input type="text" class="form-control input-key text-center" maxlength="4">
+                    <input type="text" class="form-control input-key text-center" maxlength="4">
+                    <input type="text" class="form-control input-key text-center" maxlength="4">
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>

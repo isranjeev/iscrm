@@ -64,6 +64,7 @@ while($drow = mysqli_fetch_array($data)) {
     $insd = mysqli_query($conn, $ins);
     $last_id = $conn->insert_id;
 
+    
     @session_start();
     $_SESSION["OTP"]=$pass;
     $_SESSION['USER']=$ifid;

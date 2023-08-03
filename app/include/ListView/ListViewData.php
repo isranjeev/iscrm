@@ -636,7 +636,7 @@ class ListViewData
     }
 
     /**
-     * generates the additional details values
+     * generates the additional details values 
      *
      * @param array $fields
      * @param callable $adFunction

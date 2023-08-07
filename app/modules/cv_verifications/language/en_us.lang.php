@@ -76,4 +76,5 @@ $mod_strings = array (
   'LBL_NEW_FORM_TITLE' => 'New verifications',
   'LBL_MOBILENO' => 'Mobile No.',
   'LBL_EMAIL' => 'Email Address',
+  'LBL_EDITVIEW_PANEL1' => 'New Panel 1',
 );

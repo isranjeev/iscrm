@@ -20,6 +20,15 @@ array (
           'field' => '30',
         ),
       ),
+      'useTabs' => false,
+      'tabDefs' => 
+      array (
+        'DEFAULT' => 
+        array (
+          'newTab' => false,
+          'panelDefault' => 'expanded',
+        ),
+      ),
     ),
     'panels' => 
     array (
@@ -33,6 +42,19 @@ array (
         1 => 
         array (
           0 => 'description',
+        ),
+        2 => 
+        array (
+          0 => 
+          array (
+            'name' => 'email',
+            'label' => 'LBL_EMAIL',
+          ),
+          1 => 
+          array (
+            'name' => 'mobileno',
+            'label' => 'LBL_MOBILENO',
+          ),
         ),
       ),
     ),
